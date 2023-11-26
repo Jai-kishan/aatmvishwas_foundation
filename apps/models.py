@@ -27,6 +27,8 @@ class AboutUs(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name_plural  = "About Us"
 
 class TeamMember(models.Model):
     name = models.CharField(max_length=255)
