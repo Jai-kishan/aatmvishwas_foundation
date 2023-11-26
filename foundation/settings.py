@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
-
+import os
 import pymysql
 
 pymysql.version_info = (1,4,6,'final', 0) # (major, minor, micro, releaselevel, serial)
@@ -20,8 +20,8 @@ pymysql.install_as_MySQLdb()
 # load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
+# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -66,7 +66,8 @@ ROOT_URLCONF = 'foundation.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
+        # 'DIRS': [BASE_DIR /  "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,6 +79,8 @@ TEMPLATES = [
         },
     },
 ]
+# TEMPLATE_DIRS = ( "apps/templates" ),
+
 
 WSGI_APPLICATION = 'foundation.wsgi.application'
 
@@ -147,3 +150,13 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static').replace('\\', '/')
+
+print("STATIC_ROOT", STATIC_ROOT)
+
+
+# Media files
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')
+MEDIA_URL = '/media/'
