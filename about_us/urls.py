@@ -1,5 +1,5 @@
 from django.urls import path
-from apps import views
+from about_us import views
 
 urlpatterns = [
     path('about_us/', views.about_us_list),

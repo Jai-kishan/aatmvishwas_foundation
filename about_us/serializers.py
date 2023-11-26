@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from apps.models import AboutUs, TeamMember
+from about_us.models import AboutUs, TeamMember
 
 # class AboutUsSerializers(serializers.Serializer):
 #     id = serializers.IntegerField(read_only=True)
