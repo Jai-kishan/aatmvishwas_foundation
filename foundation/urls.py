@@ -19,10 +19,15 @@ from django.urls import path, include
 from django.conf import settings 
 from django.conf.urls.static import static
 
+
+admin.site.site_header = "UMSRA Admin"
+admin.site.site_title = "UMSRA Admin Portal"
+admin.site.index_title = "Welcome to UMSRA Researcher Portal"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.urls')),
-    path('about', include('about_us.urls')),
+    path('', include('about_us.urls')),
     path('donate', include('donate_us.urls')),
 
 ]

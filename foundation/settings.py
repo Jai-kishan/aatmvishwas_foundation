@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # 'apps',
+    'apps',
     'about_us',
     'donate_us',
     'django_extensions'
@@ -104,7 +104,11 @@ DATABASES = {
         "USER": "asf",
         "PASSWORD": "asf@2023",
         "HOST": "localhost",
-        "PORT": "3306",        
+        "PORT": "3306",    
+        'OPTIONS': {
+            'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
+            'charset': 'utf8mb4'
+        }         
     }
 }
 
@@ -156,13 +160,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static').replace('\\', '/')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-# print("STATIC_ROOT", STATIC_ROOT)
-
 
 
 

@@ -30,6 +30,7 @@ class AboutUs(models.Model):
     class Meta:
         verbose_name_plural  = "About Us"
 
+
 class TeamMember(models.Model):
     name = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
@@ -42,6 +43,7 @@ class TeamMember(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Blog(models.Model):
     title = models.CharField(max_length=255)
