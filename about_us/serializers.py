@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from about_us.models import AboutUs, TeamMember
+# from about_us.models import AboutUs, TeamMember
 
 # class AboutUsSerializers(serializers.Serializer):
 #     id = serializers.IntegerField(read_only=True)
@@ -18,7 +18,7 @@ from about_us.models import AboutUs, TeamMember
 #         return instance
 
 
-class AboutUsSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = AboutUs
-        fields = ['id', 'title', 'description', 'image']
+# class AboutUsSerializers(serializers.ModelSerializer):
+#     class Meta:
+#         model = AboutUs
+#         fields = ['id', 'title', 'description', 'image']

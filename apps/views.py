@@ -9,3 +9,7 @@ def home(request):
 
 def team_member(request):
     return render(request, 'team.html')
+
+
+def about_us(request):
+    return render(request, 'about_us.html') 

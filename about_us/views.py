@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
-from about_us.models import AboutUs
-from about_us.serializers import AboutUsSerializers
+# from about_us.models import AboutUs
+# from about_us.serializers import AboutUsSerializers
 
 # Create your views here.
 # @csrf_exempt
@@ -51,5 +51,3 @@ from about_us.serializers import AboutUsSerializers
 #         return HttpResponse(status=204)
 
 
-def about_us(request):
-    return render(request, 'about_us.html') 
