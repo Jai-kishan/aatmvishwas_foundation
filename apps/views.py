@@ -2,8 +2,6 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def home(request):
-    # return HttpResponse("hello dear just !")
-    # return render(request, 'new_index.html')
     return render(request, 'index.html')
 
 
@@ -13,3 +11,14 @@ def team_member(request):
 
 def about_us(request):
     return render(request, 'about_us.html') 
+
+
+def contact_us(request):
+    return render(request, 'contact_us.html') 
+
+
+def blogs(request):
+    return render(request, 'blog.html') 
+
+def donate_us(request):
+    return render(request, 'donate_us.html') 
