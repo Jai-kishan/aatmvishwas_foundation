@@ -10,6 +10,11 @@ class Home(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name_plural  = "Home"
+        db_table = 'home'
+        
+
 
 class AboutUs(models.Model):
     title = models.CharField(max_length=255)
@@ -21,6 +26,7 @@ class AboutUs(models.Model):
 
     class Meta:
         verbose_name_plural  = "About Us"
+        db_table = 'about_us'
 
 
 class TeamMember(models.Model):
@@ -36,6 +42,10 @@ class TeamMember(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name_plural  = "Team Member"
+        db_table = 'team_members'
+
 
 class Blog(models.Model):
     title = models.CharField(max_length=255)
@@ -47,6 +57,8 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        db_table = 'blogs'
 
 class DonateUs(models.Model):
     name = models.CharField(max_length=255)
@@ -59,6 +71,9 @@ class DonateUs(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name_plural  = "Donate Us"
+        db_table = 'donate_us'
 
 class ContactUs(models.Model):
     name = models.CharField(max_length=255)
@@ -71,6 +86,10 @@ class ContactUs(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name_plural  = "Contact Us"
+        db_table = 'contact_us'
+
 
 class Banner(models.Model):
     title = models.CharField(max_length=255)
@@ -80,3 +99,8 @@ class Banner(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name_plural  = "Banner"
+        db_table = 'banners'
+        
