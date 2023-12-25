@@ -38,3 +38,30 @@ DATABASES = {
     }
 
 ```
+
+
+# Your password does not satisfy the current policy requirements
+# ERROR 1819 (HY000): Your password does not satisfy the current policy requirements
+Because of your password. You can see password validate configuration metrics using the following query in MySQL client:
+```
+SHOW VARIABLES LIKE 'validate_password%';
+```
+The output should be something like that :
+
++--------------------------------------+-------+
+| Variable_name                        | Value |
++--------------------------------------+-------+
+| validate_password.check_user_name    | ON    |
+| validate_password.dictionary_file    |       |
+| validate_password.length             | 6     |
+| validate_password.mixed_case_count   | 1     |
+| validate_password.number_count       | 1     |
+| validate_password.policy             | LOW   |
+| validate_password.special_char_count | 1     |
++--------------------------------------+-------+
+then you can set the password policy level lower, for example:
+
+```
+SET GLOBAL validate_password.length = 6;
+SET GLOBAL validate_password.number_count = 0;
+```
