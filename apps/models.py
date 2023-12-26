@@ -76,7 +76,8 @@ class DonateUs(models.Model):
         db_table = 'donate_us'
 
 class ContactUs(models.Model):
-    name = models.CharField(max_length=255)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
     email = models.EmailField()
     subject = models.CharField(max_length=255)
     message = models.TextField()
@@ -84,7 +85,7 @@ class ContactUs(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.title
+        return self.subject
 
     class Meta:
         verbose_name_plural  = "Contact Us"

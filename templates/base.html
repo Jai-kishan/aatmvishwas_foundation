@@ -107,6 +107,8 @@
     </header>
 
     {% block body %}
+    {% include 'messages.html' %}
+
 
     {% endblock %}
 
@@ -135,7 +137,7 @@
 
         <div class="nav-box row clearfix">
           <div class="inner col-md-9 clearfix">
-            <ul class="footer-nav clearfix">
+            <ul class="footer-nav clearfix" style="margin-bottom: 0rem !important;">
               <li>
                 <a href="/">Home</a>
               </li>

@@ -1,66 +1,136 @@
 {% extends 'base.html' %}
 
 {% block body %}
+  <body>
+    <!-- ************************* Page Title Starts Here ************************** -->
 
-<body>
-
-    <!--  ************************* Page Title Starts Here ************************** -->
-    <div class="row contact-rooo no-margin">
-        <div class="container">
-            <div class="row">
-                <div style="padding:20px" class="col-sm-7">
-                    <h2>Contact Form</h2> <br>
-                    <div class="row cont-row">
-                        <div class="col-sm-3"><label>Enter Name </label><span>:</span></div>
-                        <div class="col-sm-8"><input type="text" placeholder="Enter Name" name="name"
-                                class="form-control input-sm"></div>
-                    </div>
-                    <div class="row cont-row">
-                        <div class="col-sm-3"><label>Email Address </label><span>:</span></div>
-                        <div class="col-sm-8"><input type="text" name="name" placeholder="Enter Email Address"
-                                class="form-control input-sm"></div>
-                    </div>
-                    <div class="row cont-row">
-                        <div class="col-sm-3"><label>Mobile Number</label><span>:</span></div>
-                        <div class="col-sm-8"><input type="text" name="name" placeholder="Enter Mobile Number"
-                                class="form-control input-sm"></div>
-                    </div>
-                    <div class="row cont-row">
-                        <div class="col-sm-3"><label>Subject</label><span>:</span></div>
-                        <div class="col-sm-8"><input type="text" name="name" placeholder="Enter Your Subject"
-                                class="form-control input-sm"></textarea></div>
-                    </div>
-
-                    <div class="row cont-row">
-                        <div class="col-sm-3"><label>Enter Message</label><span>:</span></div>
-                        <div class="col-sm-8"><textarea rows="5" placeholder="Enter Your Message"
-                                class="form-control input-sm"></textarea></div>
-                    </div>                    
-
-                    <div style="margin-top:10px;" class="row">
-                        <div style="padding-top:10px;" class="col-sm-3"><label></label></div>
-                        <div class="col-sm-8"><button class="btn btn-primary btn-sm">Send Message</button></div>
-                    </div>
-                </div>
-                <div class="col-sm-5">
-                    <div style="margin:20px" class="serv">
-                        <h2 style="margin-top:10px;">Talk to Us Regarding...!</h2>
-                        <p> We love to engage in conversations related to collaborations, building new courses
-                            orworkshops for skilling rural youth.
-                        <p> <br><span> Following collaborations are heartily welcome. </span>
-                        <ul Start="1">
-                            <li> Traing or workshops for teachers, team members. </li>
-                            <li> Connecting to your network</li>
-                            <li>Design a course for childern of villages with us</li>
-                            <li> Donate money, things or skills to support rural education </li>
-                            </ul><br><br>
-                            <strong>Write to us: info@aatmvishwasfoundation.in</strong><br>
-                            <strong>Whatsapp: +91 95342 99262</strong>
-                    </div>
-                </div>
-            </div>
+    <div class="page-nav no-margin row">
+      <div class="container">
+        <div class="row">
+          <h2>You can reach out to us</h2>
+          <!-- <ul> -->
+          <!-- <li> <a href="#"><i class="fas fa-home"></i> Home</a></li> -->
+          <!-- <li><i class="fas fa-angle-double-right"></i> About Us</li> -->
+          <!-- </ul> -->
         </div>
+      </div>
     </div>
 
-</body>
+    <div class="row contact-rooo no-margin">
+      <script>
+        function validateForm() {
+          var subject = document.getElementById('id_subject').value
+          var phone_number = document.getElementById('id_phone_number').value
+        
+          // Simple check for a non-empty subject
+          if (!subject.trim()) {
+            alert('Subject cannot be empty.')
+            return false
+          }
+        
+          // Validate Indian phone number format
+          var phonePattern = /^[6789]\d{9}$/
+          if (!phonePattern.test(phone_number)) {
+            alert('Please enter a valid Indian phone number.')
+            return false
+          }
+        
+          return true
+        }
+      </script>
+
+      <div class="container">
+        <div class="row">
+          <div style="padding:20px" class="col-sm-7">
+            <form action="/contact_us" method="post" onsubmit="return validateForm()">
+              {% csrf_token %}
+              {% comment %} {{ form.as_p }} {% endcomment %}
+
+              <h2>Contact Form</h2> <br />
+              <div class="row cont-row">
+                <div class="col-sm-3">
+                  <label>First Name</label><span>:</span>
+                </div>
+
+                <div class="col-sm-8">
+                  <input type="text" placeholder="Enter First Name" name="first_name" class="form-control input-sm" />
+                </div>
+              </div>
+
+              <div class="row cont-row">
+                <div class="col-sm-3">
+                  <label>Last Name</label><span>:</span>
+                </div>
+
+                <div class="col-sm-8">
+                  <input type="text" placeholder="Enter Last Name" name="last_name" class="form-control input-sm" />
+                </div>
+              </div>
+
+              <div class="row cont-row">
+                <div class="col-sm-3">
+                  <label>Email Address</label><span>:</span>
+                </div>
+                <div class="col-sm-8">
+                  <input type="text" name="email_address" placeholder="Enter Email Address" class="form-control input-sm" />
+                </div>
+              </div>
+              <div class="row cont-row">
+                <div class="col-sm-3">
+                  <label>Mobile Number</label><span>:</span>
+                </div>
+                <div class="col-sm-8" id="id_phone_number">
+                  <input type="text" name="phone_number" placeholder="Enter Mobile Number" class="form-control input-sm" />
+                </div>
+              </div>
+              <div class="row cont-row">
+                <div class="col-sm-3">
+                  <label>Subject</label><span>:</span>
+                </div>
+                <div class="col-sm-8" id="id_subject">
+                  <input type="text" name="subject" placeholder="Enter Your Subject" class="form-control input-sm" />
+                </div>
+              </div>
+
+              <div class="row cont-row">
+                <div class="col-sm-3">
+                  <label>Enter Message</label><span>:</span>
+                </div>
+                <div class="col-sm-8">
+                  <textarea rows="5" name="message" placeholder="Enter Your Message" class="form-control input-sm"></textarea>
+                </div>
+              </div>
+
+              <div style="margin-top:10px;" class="row">
+                <div style="padding-top:10px;" class="col-sm-3">
+                  <label></label>
+                </div>
+                <div class="col-sm-8">
+                  <button type="submit" class="btn btn-primary btn-sm">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-sm-5">
+            <div style="margin:20px" class="serv">
+              <h2 style="margin-top:10px;">Talk to Us Regarding...!</h2>
+              <p>We love to engage in conversations related to collaborations, building new courses orworkshops for skilling rural youth.</p>
+              <p>
+                <br /><span>Following collaborations are heartily welcome.</span>
+              </p>
+              <ul Start="1">
+                <li>Traing or workshops for teachers, team members.</li>
+                <li>Connecting to your network</li>
+                <li>Design a course for childern of villages with us</li>
+                <li>Donate money, things or skills to support rural education</li>
+              </ul><br /><br />
+              <strong>Write to us: info@aatmvishwasfoundation.in</strong><br />
+              <strong>Whatsapp: +91 95342 99262</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 {% endblock %}

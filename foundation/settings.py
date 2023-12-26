@@ -10,10 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
-from dotenv import load_dotenv
 import os
 import pymysql
+
+
+from pathlib import Path
+from decouple import config
+from dotenv import load_dotenv
+from django.contrib.messages import constants as messages
+
 
 pymysql.version_info = (1,4,6,'final', 0) # (major, minor, micro, releaselevel, serial)
 pymysql.install_as_MySQLdb()
@@ -27,10 +32,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-nwe0k6n!ou^3p6r(qkg88xa*l^f&5*-xcxbj0_o%+05=t^+-$4'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -48,7 +53,9 @@ INSTALLED_APPS = [
     'apps',
     'about_us',
     'donate_us',
-    'django_extensions'
+    
+    'django_extensions',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -60,6 +67,20 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-secondary',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-danger',
+ }
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4' #add the Bootstrap template pack
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #add the email backend
+
 
 ROOT_URLCONF = 'foundation.urls'
 
