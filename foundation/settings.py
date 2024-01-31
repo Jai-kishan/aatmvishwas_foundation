@@ -31,11 +31,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
+# # SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = config('SECRET_KEY')
+
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = config('DEBUG')
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'django-insecure-m67hpt9#x_)ixakm*520_w6ilz@(j*o+27n4jtv&jv-(_*b!ym'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG')
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -122,8 +128,9 @@ DATABASES = {
     'default': {
         "ENGINE" : "django.db.backends.mysql",
         "NAME": "asf_db",
-        "USER": "asf",
-        "PASSWORD": "asf@2023",
+        "USER": "root",
+        # "PASSWORD": "asf@2023",
+        "PASSWORD": "",
         "HOST": "localhost",
         "PORT": "3306",    
         'OPTIONS': {
