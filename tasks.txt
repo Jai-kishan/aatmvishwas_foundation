@@ -1,0 +1,11 @@
+Tasks 
+
+Contact Us page
+- Need to show successfull dialog box after clicking on "send Message" button
+
+
+Team member: 
+- need to iterate a loop so automatic new member details come on the page.
+- give the "read more" option so user can redirect on single team details page.
+- profile image should be corp as per the page dimention. check image crop macanism.
+

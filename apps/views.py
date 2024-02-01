@@ -12,6 +12,7 @@ def home(request):
 
 
 def team_member(request):
+    
     return render(request, "team.html")
 
 
