@@ -8,8 +8,14 @@ from django.core.mail import send_mail, BadHeaderError
 
 
 def home(request):
-    return render(request, "index.html")
+    banners = Banner.objects.order_by("-date_modified")
+    context = {"banners": banners}
+    return render(request, "landing_page.html", context)
 
+# def landing_page_banner(request):
+#     banners = Banner.objects.order_by("-date_modified")
+#     context = {"banners": banners}
+#     return    
 
 def team_member(request):
     team_member = TeamMember.objects.order_by("-date_modified")

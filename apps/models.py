@@ -117,8 +117,8 @@ class ContactUs(models.Model):
 class Banner(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    image = models.ImageField(upload_to='home')
-    url = models.URLField(max_length=200)
+    image = models.ImageField(upload_to='banners')
+    url = models.URLField(max_length=200, blank=True)
     date_created = models.DateTimeField(default=datetime.now, blank=True)
     date_created_timestamp = models.CharField(max_length=50, blank=True)
     date_modified = models.DateTimeField(default=datetime.now, blank=True)
