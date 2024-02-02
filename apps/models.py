@@ -1,12 +1,16 @@
 from django.db import models
-
+from datetime import datetime
 # Create your models here.
 
 class Home(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     image = models.ImageField(upload_to='home')
-
+    date_created = models.DateTimeField(default=datetime.now, blank=True)
+    date_created_timestamp = models.CharField(max_length=50, blank=True)
+    date_modified = models.DateTimeField(default=datetime.now, blank=True)
+    date_modified_timestamp = models.CharField(max_length=50, blank=True)
+    
     def __str__(self):
         return self.title
 
@@ -16,10 +20,14 @@ class Home(models.Model):
         
 
 
-class AboutUs(models.Model):
+class AboutUs(models.Model):    
     title = models.CharField(max_length=255)
     description = models.TextField()
     image = models.ImageField(upload_to='media/images/about_us')
+    date_created = models.DateTimeField(default=datetime.now, blank=True)
+    date_created_timestamp = models.CharField(max_length=50, blank=True)
+    date_modified = models.DateTimeField(default=datetime.now, blank=True)
+    date_modified_timestamp = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
         return self.title
@@ -38,6 +46,10 @@ class TeamMember(models.Model):
     position = models.CharField(max_length=100)
     social_media_link = models.URLField()
     age = models.IntegerField()
+    date_created = models.DateTimeField(default=datetime.now, blank=True)
+    date_created_timestamp = models.CharField(max_length=50, blank=True)
+    date_modified = models.DateTimeField(default=datetime.now, blank=True)
+    date_modified_timestamp = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
         return f"{self.title} {self.name}"
@@ -53,7 +65,11 @@ class Blog(models.Model):
     content  = models.TextField()
     image = models.ImageField(upload_to='blog')
     date_published = models.DateTimeField()
-
+    date_created = models.DateTimeField(default=datetime.now, blank=True)
+    date_created_timestamp = models.CharField(max_length=50, blank=True)
+    date_modified = models.DateTimeField(default=datetime.now, blank=True)
+    date_modified_timestamp = models.CharField(max_length=50, blank=True)
+    
     def __str__(self):
         return self.title
 
@@ -66,7 +82,10 @@ class DonateUs(models.Model):
     donation_amount = models.IntegerField()
     title = models.CharField(max_length=100)
     description = models.TextField()
-    timestamp = models.DateTimeField(auto_now_add=True)
+    date_created = models.DateTimeField(default=datetime.now, blank=True)
+    date_created_timestamp = models.CharField(max_length=50, blank=True)
+    date_modified = models.DateTimeField(default=datetime.now, blank=True)
+    date_modified_timestamp = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
         return self.title
@@ -82,7 +101,10 @@ class ContactUs(models.Model):
     subject = models.CharField(max_length=255)
     message = models.TextField()
     phone_number = models.CharField(max_length=10)
-    timestamp = models.DateTimeField(auto_now_add=True)
+    date_created = models.DateTimeField(default=datetime.now, blank=True)
+    date_created_timestamp = models.CharField(max_length=50, blank=True)
+    date_modified = models.DateTimeField(default=datetime.now, blank=True)
+    date_modified_timestamp = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
         return self.subject
@@ -97,6 +119,10 @@ class Banner(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='home')
     url = models.URLField(max_length=200)
+    date_created = models.DateTimeField(default=datetime.now, blank=True)
+    date_created_timestamp = models.CharField(max_length=50, blank=True)
+    date_modified = models.DateTimeField(default=datetime.now, blank=True)
+    date_modified_timestamp = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
         return self.title

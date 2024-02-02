@@ -15,17 +15,7 @@ from apps.models import *
 from django.core.files import File
 
 team = TeamMember.objects.filter()
-# for i in team:
-#     print(
-#         i.name,
-#         i.title,
-#         i.image,
-#         i.biography,
-#         i.address,
-#         i.position,
-#         i.social_media_link,
-#         i.age,
-#     )
+
 image_path = '/home/jai/Downloads/jai_kishan.jpg'
 team_details = [
     {
@@ -100,5 +90,5 @@ for data in team_details:
         social_media_link=data.get("social_media"),
         age=data.get("age"),
     )
-    instance.image.save(f'{data.get("name")}{image_path.split(".")[-1]}', File(open(image_path, 'rb')))
+    instance.image.save(f'{data.get("name")}.{image_path.split(".")[-1]}', File(open(image_path, 'rb')))
 

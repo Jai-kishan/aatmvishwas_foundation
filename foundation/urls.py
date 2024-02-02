@@ -20,9 +20,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-admin.site.site_header = "UMSRA Admin"
-admin.site.site_title = "UMSRA Admin Portal"
-admin.site.index_title = "Welcome to UMSRA Researcher Portal"
+admin.site.site_header = "Aatmvishwas Foundation Admin"
+admin.site.site_title = "Aatmvishwas Foundation Admin Portal"
+admin.site.index_title = "Welcome to Aatmvishwas Foundation Researcher Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),

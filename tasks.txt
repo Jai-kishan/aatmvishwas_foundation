@@ -2,10 +2,20 @@ Tasks
 
 Contact Us page
 - Need to show successfull dialog box after clicking on "send Message" button
+- data should be come from modles
 
 
 Team member: 
 - need to iterate a loop so automatic new member details come on the page.
 - give the "read more" option so user can redirect on single team details page.
 - profile image should be corp as per the page dimention. check image crop macanism.
+- data should be come from modles
 
+Home Page 
+- Banner can be add dynamicly, Image size can be handle.
+- data should be come from modles
+
+
+About Us 
+- About us can be update using django admin pannel
+- data should be come from modles

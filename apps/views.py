@@ -3,7 +3,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import ContactUsForm
-from .models import ContactUs
+from .models import ContactUs, TeamMember
 from django.core.mail import send_mail, BadHeaderError
 
 
@@ -12,8 +12,10 @@ def home(request):
 
 
 def team_member(request):
-    
-    return render(request, "team.html")
+    team_member = TeamMember.objects.order_by("-date_modified")
+    context = {"team_member": team_member}
+    # return render(request, "polls/index.html", context)
+    return render(request, "team.html",context)
 
 
 def about_us(request):
