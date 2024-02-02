@@ -41,7 +41,7 @@ class TeamMember(models.Model):
     name = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
     image = models.ImageField(upload_to='team_members')
-    biography = models.TextField()
+    biography = models.TextField(max_length=250)
     address = models.CharField(max_length=255)
     position = models.CharField(max_length=100)
     social_media_link = models.URLField()
