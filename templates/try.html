@@ -1,87 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Involved</title>
+  <!-- Include Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Include Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
+    .get-involved-item {
+      cursor: pointer;
+    }
 
-        .donation-section {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-
-        .donation-box {
-            max-width: 400px;
-            width: 100%;
-            padding: 20px;
-            margin: 10px;
-            text-align: center;
-            background-color: #f0f0f0;
-            border-radius: 8px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-        }
-
-        @media (max-width: 768px) {
-            .donation-section {
-                flex-direction: column;
-            }
-        }
-    </style>
+    .get-involved-item:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Donate Us</h1>
-    </header>
-
-    <div class="donation-section">
-        <div class="donation-box">
-            <h2>Bank Transfer</h2>
-            <p>Account Holder Name: Aatmvishwas Foundation</p>
-            <p>Bank Name: State Bank Of India</p>
-            <p>Account Number: 4261-6204-164</p>
-            <p>IFSC Code: SBIN0008477</p>
-            <p>Reference: Please mention your name and purpose of donation</p>
-        </div>
-
-        <div class="donation-box">
-            <h2>Online Payment</h2>
-            <!-- Add your online payment options here -->
-            <p>Coming Soon...</p>
-        </div>
-
-        <div class="donation-box">
-            <h2>Scan QR Code</h2>
-            <img src="static/assets/images/afs_qr_code.jpeg" height="200" alt="QR Code" />
-        </div>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-4 col-sm-12">
+        <h2>Get Involved</h2>
+        <p class="get-involved-item"><i class="fas fa-handshake mr-3"></i><a href="#">Be a Partner</a></p>
+        <p class="get-involved-item"><i class="fas fa-hand-holding-heart mr-3"></i><a href="#">Donate</a></p>
+        <p class="get-involved-item"><i class="fas fa-bullhorn mr-3"></i><a href="#">Careers</a></p>
+        <p class="get-involved-item"><i class="fas fa-users mr-3"></i><a href="#">Volunteer</a></p>
+      </div>
     </div>
+  </div>
 
-    <footer>
-        <p>Thank you for supporting our cause!</p>
-    </footer>
-
+  <!-- Include Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

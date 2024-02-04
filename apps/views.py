@@ -78,3 +78,6 @@ def blogs(request):
 
 def donate_us(request):
     return render(request, "donate_us.html")
+
+def our_partners(request):
+    return render(request, 'partners.html')
