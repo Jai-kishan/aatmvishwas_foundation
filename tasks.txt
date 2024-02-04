@@ -19,6 +19,18 @@ Home Page
 About Us 
 - About us can be update using django admin pannel
 - data should be come from modles
+- mission
+
+Get Involved
+Be a Partner
+Donate
+Careers
+Volunteer
+
+About
+Our Story
+Team
+Blog
 
 Banner 
 - how can I fit the image height and width? while uploading image in django templates | so user upload any picture so thet can adjust autometically 

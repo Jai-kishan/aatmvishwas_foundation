@@ -2,19 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>Home</title>
-    <link rel="shortcut icon" href="static/assets/images/fav.png" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet" />
+    <link
+      rel="shortcut icon"
+      href="static/assets/images/fav.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="shortcut icon" href="static/assets/images/fav.jpg" />
     <link rel="stylesheet" href="static/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="static/assets/css/all.min.css" />
     <link rel="stylesheet" href="static/assets/css/animate.css" />
-    <link rel="stylesheet" href="static/assets/plugins/slider/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="static/assets/plugins/slider/css/owl.theme.default.css" />
+    <link
+      rel="stylesheet"
+      href="static/assets/plugins/slider/css/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="static/assets/plugins/slider/css/owl.theme.default.css"
+    />
     <link rel="stylesheet" type="text/css" href="static/assets/css/style.css" />
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
 
     <!-- jQuery library -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
@@ -24,6 +43,7 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
   </head>
 
   <body>
@@ -45,11 +65,12 @@
             </div>
             <div class="col-lg-3 col-md-6 folouws">
               <ul class="ulright">
+                <li><small>Folow Us</small>:</li>
                 <li>
-                  <small>Folow Us</small>:
-                </li>
-                <li>
-                  <a href="https://www.facebook.com/groups/497677058604394/?ref=share&mibextid=NSMWBT"><i class="fab fa-facebook-f"></i></a>
+                  <a
+                    href="https://www.facebook.com/groups/497677058604394/?ref=share&mibextid=NSMWBT"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
                 </li>
                 <li>
                   <i class="fab fa-twitter-square"></i>
@@ -63,8 +84,9 @@
               </ul>
             </div>
             <div class="col-lg-3 d-none d-md-block col-md-6 btn-bhed">
-              <button class="btn btn-sm btn-success">Join Us</button>
-              <button class="btn btn-sm btn-default">Donate</button>
+              <button class="btn btn-sm btn-success" onclick="window.location.href='/
+              +'">Join Us</button>
+              <button class="btn btn-sm btn-default" onclick="window.location.href='donate_us'">Donate</button>
             </div>
           </div>
         </div>
@@ -73,9 +95,14 @@
         <div class="container">
           <div class="row nav-row">
             <div class="col-lg-3 col-md-12 logo">
-              <a href="landing_page.html">
-                <img src="static/assets/images/aatmvishwasfoundation.png" alt="" />
-                <a data-toggle="collapse" data-target="#menu" href="#menu"><i class="fas d-block d-lg-none small-menu fa-bars"></i></a>
+              <a href="/">
+                <img
+                  src="static/assets/images/aatmvishwasfoundation.png"
+                  alt=""
+                />
+                <a data-toggle="collapse" data-target="#menu" href="#menu"
+                  ><i class="fas d-block d-lg-none small-menu fa-bars"></i
+                ></a>
               </a>
             </div>
             <div id="menu" class="col-lg-9 col-md-12 d-none d-lg-block nav-col">
@@ -105,72 +132,62 @@
         </div>
       </div>
     </header>
-
-    {% block body %}
-    {% include 'messages.html' %}
-
-
-    {% endblock %}
-
+    {% block body %} {% include 'messages.html' %} {% endblock %}
+    
+  </body>
     <footer class="footer">
       <div class="container">
         <div class="row">
           <div class="col-md-4 col-sm-12">
             <h2>About Us</h2>
-            <p>We, a group of education and social enthusiasts, came together to start a learning center in Amagachi village of Arariya district in Bihar, which area is highly deprived of education, health, and development. Vijay Paswan, who belongs to Amagachi, started the learning center in October 2022 with limited resourse and strongest desire to serve community.</p>
-            <p>Currently, our initiative helps around 50-60 kids, many of whom do not have formal school access. It is in early stage right now registeration process is in progress.</p>
-            <p>All the team members who are working for this initiative are volunteers but also working full-time job to support themselves and their families. It takes a pipeline of organisations to let problem solvers live up to their fullest potential.</p>
+            <p>
+              A group of education and social enthusiasts initiated a learning
+              center in Amagachi village, Bihar, addressing the region's
+              educational and developmental gaps. Led by Vijay Paswan, the
+              center, established in October 2022 with limited resources,
+              currently supports 50-60 kids without formal school access. The
+              team comprises volunteers juggling full-time jobs to sustain both
+              their families and this meaningful initiative.
+            </p>
           </div>
-          <div class="col-md-4 col-sm-12"></div>
-          <div class="col-md-4 col-sm-12 map-img">
-            <h2>Contact Us</h2>
-            <address class="md-margin-bottom-40">
-              Amagachi Village <br />
-              Arariya (District) <br />
-              Bihar, IND <br />
-              Phone: +91 9534299262 <br />
-              Email: <a href="mailto:info@anybiz.com" class="">vijay@aatmvishwasfoundation.in</a><br />
-              Web: <a class="">www.aatmvishwasfoundation.in</a>
-            </address>
-          </div>
-        </div>
 
-        <div class="nav-box row clearfix">
-          <div class="inner col-md-9 clearfix">
-            <ul class="footer-nav clearfix" style="margin-bottom: 0rem !important;">
-              <li>
-                <a href="/">Home</a>
-              </li>
-              <li>
-                <a href="about_us">About</a>
-              </li>
-              <li>
-                <a href="teams">Team Members</a>
-              </li>
-              <li>
-                <a href="blog">Blog</a>
-              </li>
-              <li>
-                <a href="contact_us">Contact</a>
-              </li>
-            </ul>
+          <div class="col-md-4 col-sm-12">
+            <h2>Get Involved</h2>
+            <p><i class="fas fa-handshake mr-3"></i>Be a Partner</p>
+            <p><i class="fas fa-hand-holding-heart mr-3"></i>Donate</p>
+            <p><i class="fas fa-bullhorn mr-3"></i>Careers</p>
+            <p><i class="fas fa-users	 mr-3"></i>Volunteer</p>
           </div>
-          <div class="donate-link col-md-3">
-            <a href="donate_us" class="btn btn-primary"><span class="btn-title">Donate Now</span></a>
+
+          <div class="col-md-4 col-sm-12">
+            <h2>Contact</h2>
+            <p>
+              <i class="fas fa-city mr-3"></i>Amagachi Village, <br>
+              <span style="margin-left: 4.5rem;">
+                Arariya (District) Bihar, IND
+              </span>
+            </p>
+            <p>
+              <i class="fas fa-envelope mr-3"></i>vijay@aatmvishwasfoundation.in
+            </p>
+            <p><i class="fas fa-phone mr-3"></i> + 91 953 429 9262</p>
           </div>
         </div>
       </div>
     </footer>
+
     <div class="copy">
-      <div class="container">
-        <a>COPYRIGHT &copy; 2023 | Designed and Developed by Aatmvishwas Foundation</a>
+      <div class="container" id="center_footer">
+        <a
+          >COPYRIGHT &copy; 2023 | Designed and Developed by Aatmvishwas
+          Foundation</a
+        >
 
         <span>
-          <a><i class="fab fa-github"></i></a>
-          <a><i class="fab fa-google-plus-g"></i></a>
-          <a><i class="fab fa-pinterest-p"></i></a>
-          <a><i class="fab fa-twitter"></i></a>
           <a><i class="fab fa-facebook-f"></i></a>
+          <a><i class="fab fa-instagram"></i></a>
+          <a><i class="fab fa-twitter"></i></a>
+          <a><i class="fab fa-linkedin-in"></i></a>
         </span>
       </div>
     </div>

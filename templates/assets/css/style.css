@@ -1,3 +1,11 @@
+/* =======================================================================
+Template Name: Youtubers
+Author:  SmartEye Technologies
+Author URI: www.smarteyeapps.com
+Version: 1.0
+coder name:Prabin Raja
+Description: This Template is created for Youtubers
+======================================================================= */
 /* ===================================== Import Variables ================================== */
 @import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700);
 @import url(https://fonts.googleapis.com/css?family=Arimo:300,400,400italic,700,700italic);
@@ -135,7 +143,7 @@ body {
 
 .page-nav {
   background-size: 100%;
-  padding: 8px;
+  padding: 68px;
   text-align: center;
   background-color: #eaeaea; }
   .page-nav ul {
@@ -656,9 +664,7 @@ header {
   padding-left: 20px; }
 
 .footer address {
-  font-weight: 300;
-  font-size: larger;
- }
+  font-weight: 300; }
 
 .footer address a {
   color: #FFF;
@@ -787,24 +793,3 @@ header {
   margin-bottom: 30px; }
 
 /*# sourceMappingURL=style.css.map */
-
-.donationHeader {
-  background-color: #f2f2f2;
-  padding: 20px;
-  text-align: center;
-}
-
-.donationSection {
-  padding: 40px;
-  text-align: center;
-}
-
-#donationBox{
-  border: 2dp solid black;
-}
-footer {
-  background-color: #f2f2f2;
-  padding: 10px;
-  text-align: center;
-}
-

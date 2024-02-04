@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block body %}
+
   <body>
     <!-- ************************* Page Title Starts Here ************************** -->
     <div class="page-nav no-margin row">
@@ -15,18 +16,29 @@
       </div>
     </div>
 
-    <section class="donationSection">
-      <div id="donationBox">
-        <p>Account Number: 1234567890</p>
-        <p>Bank Name: XYZ Bank</p>
-        <p>Branch: ABC Branch</p>
-        <p>SWIFT Code: ABCDEFGH</p>
-        <p>Reference: Please mention your name and purpose of donation</p>
-        <img src="qr_code.png" alt="QR Code" />
+    <div class="donation-section">
+      <div class="donation-box">
+          <h2>Bank Transfer</h2>
+          <p>Account Holder Name: Aatmvishwas Foundation</p>
+          <p>Bank Name: State Bank Of India</p>
+          <p>Account Number: 4261-6204-164</p>
+          <p>IFSC Code: SBIN0008477</p>
+          <p>Reference: Please mention your name and purpose of donation</p>
       </div>
-    </section>
 
-    <footer>
+      <div class="donation-box">
+          <h2>Online Payment</h2>
+          <!-- Add your online payment options here -->
+          <p>Coming Soon...</p>
+      </div>
+
+      <div class="donation-box">
+          <h2>Scan QR Code</h2>
+          <img src="static/assets/images/afs_qr_code.jpeg" height="300" alt="QR Code" />
+      </div>
+  </div>
+
+    <footer id="center_footer">
       <p>Thank you for supporting our cause!</p>
     </footer>
 
