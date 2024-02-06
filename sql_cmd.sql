@@ -1,4 +1,4 @@
-show datbases;
+show databases;
 SHOW GRANTS FOR asf;
 
 GRANT ALL PRIVILEGES ON *.* TO 'asf'@'localhost' WITH GRANT OPTION;
