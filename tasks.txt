@@ -43,10 +43,12 @@ Imp :-
 - Favicon icon on the tab
 - Create the Careers page -> coming soon page
 - Need to work on social media icon
+
+
 - create the blog page on medium
     - share the weekly and monthly GBU
 
-- Make the small reals on Insta / Facebook
+- Make the small reels, posts on Insta / Facebook
 - create the blog page on Facebook
 - Tweet the archivements on Twitter
 

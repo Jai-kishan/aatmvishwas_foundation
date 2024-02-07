@@ -9,7 +9,7 @@ from django.core.mail import send_mail, BadHeaderError
 
 def home(request):
     banners = Banner.objects.order_by("-date_modified")
-    context = {"banners": banners}
+    context = {"banners": banners,"title":"Home"}
     return render(request, "landing_page.html", context)
 
 # def landing_page_banner(request):
@@ -19,16 +19,16 @@ def home(request):
 
 def team_member(request):
     team_member = TeamMember.objects.order_by("-date_modified")
-    context = {"team_member": team_member}
+    context = {"team_member": team_member, "title":"Team Member"}
     return render(request, "team.html",context)
 
 
 def about_us(request):
-    return render(request, "about_us.html")
+    return render(request, "about_us.html", {"title":"About Us"})
 
 
-def contact_us(request):
-    return render(request, "contact_us.html")
+# def contact_us(request):
+#     return render(request, "contact_us.html", {"title":"Contact Us"})
 
 
 def contact(request):
@@ -67,17 +67,17 @@ def contact(request):
 
     else:
         form = ContactUsForm()
-    return render(request, "contact_us.html", {"form": form})
+    return render(request, "contact_us.html", {"form": form, "title":"Contact Us"})
 
 
 def blogs(request):
     blog = Blog.objects.order_by("-date_published")
-    context = {"blogs": blog}    
+    context = {"blogs": blog, "title":"Blog"}    
     return render(request, "blog.html",context)
 
 
 def donate_us(request):
-    return render(request, "donate_us.html")
+    return render(request, "donate_us.html", {"title":"Donate Us"})
 
 def our_partners(request):
-    return render(request, 'partners.html')
+    return render(request, 'partners.html', {"title":"Partners"})
