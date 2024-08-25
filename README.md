@@ -107,3 +107,13 @@ So you may need to run the command like this (as seen in comments):
 ```
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
+
+
+Latest branch :
+- asf-v1
+
+
+- Need do write a function to trim the words of banner tag | title & description
+- Image should be crop just need to pass dimantions
+- Map imbabded link 
+- 

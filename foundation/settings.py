@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'apps',
     'about_us',
     'donate_us',
+    'banner',
     
     'django_extensions',
     'crispy_forms',
