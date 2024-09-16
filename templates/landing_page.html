@@ -1,69 +1,22 @@
 {% extends 'base.html' %} {% block body %}
 <!-- Carousel Start -->
 <div class="header-carousel owl-carousel">
+  {% for slide in banners %}
   <div class="header-carousel-item">
-    <img src="static/assets/images/slider/s1.png" class="img-fluid w-100" alt="Image">
+    <img src="static/assets/images/{{slide.image}}" class="img-fluid w-100" alt="Image">
     <div class="carousel-caption">
       <div class="carousel-caption-content p-3">
-        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Our Learning
-          Center</h5>
-        <h1 class="display-1 text-capitalize text-white mb-4">Every Child Deserves A Chance To Learn
-        </h1>
-        <p class="mb-5 fs-5 animated slideInDown">Every child, regardless of their background or
-          circumstances, deserves equal access to quality education, which is essential for
-          unlocking their full potential and creating a brighter future.
-        </p>
+        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">{{slide.tag}}</h5>
+        <h1 class="display-1 text-capitalize text-white mb-4">{{slide.title}}</h1>
+        <p class="mb-5 fs-5 animated slideInDown">{{slide.description}}</p>
         <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="donate.html">Donate Us</a>
       </div>
     </div>
   </div>
-  <div class="header-carousel-item">
-    <img src="static/assets/images/slider/s2.png" class="img-fluid w-100" alt="Image">
-    <div class="carousel-caption">
-      <div class="carousel-caption-content p-3">
-        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Our Learning
-          Center</h5>
-        <h1 class="display-1 text-capitalize text-white mb-4">Helping Hands Changing Future</h1>
-        <p class="mb-5 fs-5 animated slideInDown">Your support has the power to transform lives,
-          offering hope and opportunities for a brighter future.
-        </p>
-        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="donate.html">Donate Us</a>
-      </div>
-    </div>
-  </div>
-  <div class="header-carousel-item">
-    <img src="static/assets/images/slider/Victory.jpg" class="img-fluid w-100" alt="Image">
-    <div class="carousel-caption">
-      <div class="carousel-caption-content p-3">
-        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Our Learning
-          Center</h5>
-        <h1 class="display-2 text-capitalize text-white mb-4">Lighting the Path: Empowering Youth
-          Through Education and Employment</h1>
-        <p class="mb-5 fs-5 animated slideInDown">Empowering youth with education and employment
-          opportunities, our NGO shines a light on promising tomorrows.
-        </p>
-        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="donate.html">Donate Us</a>
-      </div>
-    </div>
-  </div>
-  <div class="header-carousel-item">
-    <img src="static/assets/images/slider/s3.png" class="img-fluid w-100" alt="Image">
-    <div class="carousel-caption">
-      <div class="carousel-caption-content p-3">
-        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Our Learning
-          Center</h5>
-        <h1 class="display-1 text-capitalize text-white mb-4">Educating For A Brighter Tomorrow</h1>
-        <p class="mb-5 fs-5">By providing quality education today, we are nurturing a generation of
-          empowered individuals who will create a brighter and more prosperous tomorrow for
-          themselves and their communities.
-        </p>
-        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="donate.html">Donate Us</a>
-      </div>
-    </div>
-  </div>
+  {% endfor %}
 </div>
 <!-- Carousel End -->
-</div>
+
 <!-- Navbar & Hero End -->
 
 <!-- Services Start -->
@@ -144,7 +97,8 @@
     <div class="row g-5 align-items-center">
       <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.2s">
         <div class="about-img pb-5 ps-5">
-          <img src="static/assets/images/about.png" class="img-fluid rounded w-100" style="object-fit: cover;" alt="Image">
+          <img src="static/assets/images/about.png" class="img-fluid rounded w-100" style="object-fit: cover;"
+            alt="Image">
           <div class="about-img-inner">
             <img src="static/assets/images/o-fav.png" class="img-fluid rounded-circle w-100 h-100" alt="Image">
           </div>
@@ -482,7 +436,8 @@
       </div>
       <div class="partner-item rounded bg-light">
         <div class="d-flex mb-3">
-          <img src="static/assets/images/partners/sajhesapne.jpeg" class="img-fluid rounded-circle flex-shrink-0" alt="">
+          <img src="static/assets/images/partners/sajhesapne.jpeg" class="img-fluid rounded-circle flex-shrink-0"
+            alt="">
           <div class="position-absolute" style="top: 15px; right: 20px;">
             <i class="fa fa-quote-right fa-2x"></i>
           </div>
@@ -505,7 +460,8 @@
       </div>
       <div class="partner-item rounded bg-light">
         <div class="d-flex mb-3">
-          <img src="static/assets/images/partners/Seemanchal.jpeg" class="img-fluid rounded-circle flex-shrink-0" alt="">
+          <img src="static/assets/images/partners/Seemanchal.jpeg" class="img-fluid rounded-circle flex-shrink-0"
+            alt="">
           <div class="position-absolute" style="top: 15px; right: 20px;">
             <i class="fa fa-quote-right fa-2x"></i>
           </div>

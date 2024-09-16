@@ -117,3 +117,7 @@ Latest branch :
 - Image should be crop just need to pass dimantions
 - Map imbabded link 
 - 
+
+
+<!-- ========= -->
+open mysql shell: mysql -u root -p

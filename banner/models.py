@@ -7,12 +7,14 @@ import time
 
 # Create your models here.
 class Banner(models.Model):
-    tag = models.CharField(max_length=25)
-    title = models.CharField(max_length=50)
+    tag = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to="slider")
-    created_ts=models.DateTimeField(default=int(time.time()))
-    modified_ts=models.DateTimeField(default=int(time.time()))
+    date_created = models.DateTimeField(default=datetime.now, blank=True)
+    date_created_timestamp = models.CharField(max_length=50, blank=True)
+    date_modified = models.DateTimeField(default=datetime.now, blank=True)
+    date_modified_timestamp = models.CharField(max_length=50, blank=True)
     link = models.URLField(blank=True, null=True)
     active = models.BooleanField(default=True)
     start_date = models.DateTimeField(default=timezone.now)
@@ -20,7 +22,7 @@ class Banner(models.Model):
 
 
     def __str__(self):
-        return self.title()
+        return self.title
 
     def is_active(self):
         """Check if the banner is active based on the current date and active status."""
@@ -32,3 +34,5 @@ class Banner(models.Model):
     class Meta:
         verbose_name_plural  = "Banner"
         db_table = 'banners'
+
+

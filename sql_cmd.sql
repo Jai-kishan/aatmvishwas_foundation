@@ -1,4 +1,5 @@
 show databases;
+create database asf_db;
 SHOW GRANTS FOR asf;
 
 GRANT ALL PRIVILEGES ON *.* TO 'asf'@'localhost' WITH GRANT OPTION;
