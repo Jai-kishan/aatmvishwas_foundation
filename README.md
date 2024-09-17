@@ -121,3 +121,7 @@ Latest branch :
 
 <!-- ========= -->
 open mysql shell: mysql -u root -p
+
+
+
+python manage.py migrate --fake

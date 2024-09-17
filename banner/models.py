@@ -1,8 +1,8 @@
 from django.db import models
 from datetime import datetime
 from django.utils import timezone
+from PIL import Image
 
-import time
 
 
 # Create your models here.
@@ -20,6 +20,21 @@ class Banner(models.Model):
     start_date = models.DateTimeField(default=timezone.now)
     end_date = models.DateTimeField(blank=True, null=True)
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # First save to generate image file
+        if self.image:
+            image_path = self.image.path  # Get the image file path
+            img = Image.open(image_path)
+
+            # Set the target dimensions
+            target_width = 1920
+            target_height = 1080
+
+            # Resize the image to 1920x1080 (force resize, not keeping aspect ratio)
+            img = img.resize((target_width, target_height), Image.ANTIALIAS)
+
+            # Save the resized image back to the same path
+            img.save(image_path)
 
     def __str__(self):
         return self.title

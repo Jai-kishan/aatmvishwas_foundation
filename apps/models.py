@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from PIL import Image
 # Create your models here.
 
 class Home(models.Model):
@@ -114,20 +115,68 @@ class ContactUs(models.Model):
         db_table = 'contact_us'
 
 
-# class Banner(models.Model):
-#     title = models.CharField(max_length=255)
-#     description = models.TextField()
-#     image = models.ImageField(upload_to='banners')
-#     url = models.URLField(max_length=200, blank=True)
-#     date_created = models.DateTimeField(default=datetime.now, blank=True)
-#     date_created_timestamp = models.CharField(max_length=50, blank=True)
-#     date_modified = models.DateTimeField(default=datetime.now, blank=True)
-#     date_modified_timestamp = models.CharField(max_length=50, blank=True)
+class Program(models.Model):
+    program_brief = models.ForeignKey('ProgramHeading', on_delete=models.CASCADE, related_name='program_heading')
+    tagline = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
+    short_description = models.TextField()
+    full_description = models.TextField()
+    image = models.ImageField(upload_to='programs')
+    short_desc_url = models.URLField(max_length=200, blank=True)
+    full_desc_url = models.URLField(max_length=200, blank=True)
+    key_points = models.TextField(blank=True, help_text="Enter key points separated by commas")
+    date_created = models.DateTimeField(default=datetime.now, blank=True)
+    date_created_timestamp = models.CharField(max_length=50, blank=True)
+    date_modified = models.DateTimeField(default=datetime.now, blank=True)
+    date_modified_timestamp = models.CharField(max_length=50, blank=True)
+
+    def __str__(self):
+        return self.title
+
+    def get_key_points(self):
+        if self.key_points:
+            return [point.strip() for point in self.key_points.split(',')]
+        return []
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # First save to generate image file
+        if self.image:
+            image_path = self.image.path  # Get the image file path
+            img = Image.open(image_path)
+
+            # Set the target dimensions
+            target_width = 4080
+            target_height = 3072
+
+            # Resize the image to 1920x1080 (force resize, not keeping aspect ratio)
+            img = img.resize((target_width, target_height), Image.ANTIALIAS)
+
+            # Save the resized image back to the same path
+            img.save(image_path)
+
+
+    class Meta:
+        verbose_name_plural  = "Program"
+        db_table = 'program'
+
+        
+
+# class KeyPoint(models.Model):
+#     banner = models.ForeignKey('Program', on_delete=models.CASCADE, related_name='key_points')
+#     text = models.CharField(max_length=255)
 
 #     def __str__(self):
-#         return self.title
+#         return self.text
+    
 
-#     class Meta:
-#         verbose_name_plural  = "Banner"
-#         db_table = 'banners'
-        
+class ProgramHeading(models.Model):
+    tag_line = models.CharField(max_length=255)
+    heading = models.CharField(max_length=255)
+    overview = models.TextField()
+
+    def __str__(self):
+        return self.heading
+
+    class Meta:
+        verbose_name_plural  = "Program Heading"
+        db_table = 'program_heading'

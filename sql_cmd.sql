@@ -20,3 +20,15 @@ mysql> CREATE DATABASE asf_db;
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
 mysql> FLUSH PRIVILEGES;
 mysql> exit;
+
+
+
+
+
+SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = 'apps_program';
+
+ALTER TABLE program ADD FOREIGN KEY (program_brief) REFERENCES program(program_brief);
+ALTER TABLE program ADD FOREIGN KEY (program_brief) REFERENCES program_heading;(id);
+
+
+ALTER TABLE program ADD program_brief varchar(255);
