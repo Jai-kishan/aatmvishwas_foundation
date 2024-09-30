@@ -59,7 +59,8 @@ INSTALLED_APPS = [
     'apps',
     'about_us',
     'donate_us',
-    
+    'banner',
+    'ngo_partners',
     'django_extensions',
     'crispy_forms',
 ]
@@ -129,8 +130,8 @@ DATABASES = {
         "ENGINE" : "django.db.backends.mysql",
         "NAME": "asf_db",
         "USER": "root",
-         "PASSWORD": "12345@pk",
-        #"PASSWORD": "",
+        #"PASSWORD": "12345@pk",
+        "PASSWORD": "asf@2023",
         "HOST": "localhost",
         "PORT": "3306",    
         'OPTIONS': {
