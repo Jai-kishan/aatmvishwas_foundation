@@ -181,3 +181,18 @@ class ProgramHeading(models.Model):
     class Meta:
         verbose_name_plural  = "Program Heading"
         db_table = 'program_heading'
+
+
+
+#  Latest-Model- Added  
+class Info(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    tag = models.CharField(max_length=225)
+    date_created = models.DateTimeField(default=datetime.now, blank=True)
+    date_created_timestamp = models.CharField(max_length=50, blank=True)
+    date_modified = models.DateTimeField(default=datetime.now, blank=True)
+    date_modified_timestamp = models.CharField(max_length=50, blank=True)
+
+    def _str_(self):
+        return self.title

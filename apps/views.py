@@ -5,15 +5,28 @@ from django.shortcuts import render, redirect
 from .forms import ContactUsForm
 from .models import *
 from banner.models import Banner
+from ngo_partners.models import Partner
 from django.core.mail import send_mail, BadHeaderError
 
 
 def home(request):
+    # Fetch active banners
     banners = Banner.objects.filter(active=True).order_by("date_modified")[:2]
-    print(banners.count())
+    
+    # Fetch top programs
     top_program = Program.objects.filter(active=True)
-    context = {"banners": banners,"title":"Aatmvishwas Foundation | Home", "program_data":top_program}
+
+    partners = Partner.objects.all()  # Get all partners
+
+    context = {
+        "banners": banners,
+        "title": "Aatmvishwas Foundation | Home",
+        "program_data": top_program,
+        "partners": partners  # Add partners to context
+    }
+    
     return render(request, "landing_page.html", context)
+
 
 def landing_page_banner(request):
     banners = Banner.objects.order_by("-date_modified")
@@ -83,4 +96,6 @@ def donate_us(request):
     return render(request, "donate_us.html", {"title":"Donate Us"})
 
 def our_partners(request):
-    return render(request, 'partners.html', {"title":"Partners"})
+   return render(request, 'partners.html', {"title":"Partners"})
+
+

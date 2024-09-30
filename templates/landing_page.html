@@ -349,104 +349,35 @@
         education and rural development. Together, we can transform communities, one initiative at a time.
       </p>
     </div>
+    {% for partner in partners %}
     <div class="owl-carousel owl-theme partner-carousel partner-carousel-1 mb-4 wow bounceInUp" data-wow-delay="0.1s">
+      
+
       <div class="partner-item rounded bg-light">
         <div class="d-flex mb-3">
-          <img src="static/assets/images/partners/dbc.jpeg" class="img-fluid rounded-circle flex-shrink-0" alt="">
+          <img src="{{ partner.image.url }}" class="img-fluid rounded-circle flex-shrink-0" alt="{{ partner.name }}">
           <div class="position-absolute" style="top: 15px; right: 20px;">
-            <i class="fa fa-quote-right fa-2x"></i>
+              <i class="fa fa-quote-right fa-2x"></i>
           </div>
           <div class="ps-3 my-auto">
-            <h4 class="mb-0">Bihar Development Collective</h4>
-            <p class="m-0">Bihar</p>
+              <h4 class="mb-0">{{ partner.name }}</h4>
+              <p class="m-0">{{ partner.address }}</p>
           </div>
         </div>
         <div class="partner-content">
-          <div class="d-flex">
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-          </div>
-          <p class="fs-5 m-0 pt-3">
-            The Bihar Development Collective is a coalition fostering collaboration and learning among
-            individuals and organizations to strengthen Bihar's development ecosystem.</p>
+            <div class="d-flex">
+                {% for star in "*****" %}
+                    <i class="fas fa-star text-primary"></i>
+                {% endfor %}
+            </div>
+            <p class="fs-5 m-0 pt-3">
+                {{ partner.discription }}
+            </p>
         </div>
       </div>
-      <div class="partner-item rounded bg-light">
-        <div class="d-flex mb-3">
-          <img src="static/assets/images/partners/pp.png" class="img-fluid rounded-circle flex-shrink-0" alt="">
-          <div class="position-absolute" style="top: 15px; right: 20px;">
-            <i class="fa fa-quote-right fa-2x"></i>
-          </div>
-          <div class="ps-3 my-auto">
-            <h4 class="mb-0">Project Potential</h4>
-            <p class="m-0">eArthshala, Galgalia, Kishanganj</p>
-          </div>
-        </div>
-        <div class="partner-content">
-          <div class="d-flex">
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-          </div>
-          <p class="fs-5 m-0 pt-3">
-            Project Potential believes in the potential of every youth and community. We empower through
-            self-exploration and community action, fostering self-reliance.</p>
-        </div>
-      </div>
-      <div class="partner-item rounded bg-light">
-        <div class="d-flex mb-3">
-          <img src="static/assets/images/partners/sajhesapne.jpeg" class="img-fluid rounded-circle flex-shrink-0"
-            alt="">
-          <div class="position-absolute" style="top: 15px; right: 20px;">
-            <i class="fa fa-quote-right fa-2x"></i>
-          </div>
-          <div class="ps-3 my-auto">
-            <h4 class="mb-0">Sajhe Sapne</h4>
-            <p class="m-0">Kandbari, Himachal Pradesh</p>
-          </div>
-        </div>
-        <div class="partner-content">
-          <div class="d-flex">
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-          </div>
-          <p class="fs-5 m-0 pt-3">Empowering marginalized young rural women to learn, earn, and excel in
-            the modern workforce, thus fostering their economic independence and empowerment.</p>
-        </div>
-      </div>
-      <div class="partner-item rounded bg-light">
-        <div class="d-flex mb-3">
-          <img src="static/assets/images/partners/Seemanchal.jpeg" class="img-fluid rounded-circle flex-shrink-0"
-            alt="">
-          <div class="position-absolute" style="top: 15px; right: 20px;">
-            <i class="fa fa-quote-right fa-2x"></i>
-          </div>
-          <div class="ps-3 my-auto">
-            <h4 class="mb-0">Seemanchal Library Foundation</h4>
-            <p class="m-0">Belwa hat, Kishanganj, Bihar</p>
-          </div>
-        </div>
-        <div class="partner-content">
-          <div class="d-flex">
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-            <i class="fas fa-star text-primary"></i>
-          </div>
-          <p class="fs-5 m-0 pt-3">Seemanchal Library Foundation empowers underprivileged children through
-            free education, access to books, community engagement, and holistic development.</p>
-        </div>
-      </div>
+      
     </div>
+    {% endfor %}
   </div>
 </div>
 <!-- partner End -->
