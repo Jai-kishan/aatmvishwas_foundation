@@ -97,8 +97,8 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
                         <div class="dropdown-menu m-0">
                             <a href="about.html" class="dropdown-item">Our Story</a>
-                            <a href="blog.html" class="dropdown-item">Our Blog</a>
-                            <a href="team.html" class="dropdown-item">Our Team</a>
+                            <a href="{% url 'blogs' %}" class="dropdown-item">Our Blog</a>
+                            <a href="{% url 'team_member' %}" class="dropdown-item">Our Team</a>
                         </div>
                     </div>
                     <a href="programs.html" class="nav-item nav-link">Programs</a>
