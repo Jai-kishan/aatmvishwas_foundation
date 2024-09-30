@@ -119,6 +119,7 @@ class Program(models.Model):
     program_brief = models.ForeignKey('ProgramHeading', on_delete=models.CASCADE, related_name='program_heading')
     tagline = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
+    active = models.BooleanField(default=True)
     short_description = models.TextField()
     full_description = models.TextField()
     image = models.ImageField(upload_to='programs')
