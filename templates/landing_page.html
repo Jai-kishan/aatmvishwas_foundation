@@ -24,64 +24,28 @@
   <div class="container py-5">
     <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.2s">
       <div class="sub-style">
-        <h4 class="sub-title px-3 mb-0">What We Do</h4>
+        <h4 class="sub-title px-3 mb-0">{{program_data.0.program_brief.tag_line}}</h4>
       </div>
-      <h1 class="display-3 mb-4">Our Rural Empowerment and Development Initiatives.</h1>
-      <p class="mb-0">Our Rural Empowerment and Development Initiatives aim to uplift rural communities by
-        providing education, skill-building, and awareness programs. Through these initiatives, we strive to
-        foster sustainable development and empower individuals with the tools and knowledge needed for
-        socio-economic advancement. By focusing on education, skill development, and community engagement,
-        we aim to create a positive impact that lasts for generations!</p>
+      <h1 class="display-3 mb-4">{{program_data.0.program_brief}}</h1>
+      <p class="mb-0">{{program_data.0.program_brief.overview}}</p>
     </div>
     <div class="row g-4 justify-content-center">
+      {% for program in program_data %}
       <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
         <div class="service-item rounded">
           <div class="service-img rounded-top">
-            <img src="static/assets/images/program/first_program.jpg" class="img-fluid rounded-top w-100" alt="">
+            <img src="media/{{program.image}}" class="img-fluid rounded-top w-100" alt="">
           </div>
           <div class="service-content rounded-bottom bg-light p-4">
             <div class="service-content-inner">
-              <h5 class="mb-4">Seekho Aur Sikhao</h5>
-              <p class="mb-4">Empowering rural communities through education and engagement, ensuring
-                quality education and job skills for lifelong socio-economic advancement.</p>
+              <h5 class="mb-4">{{program.title}}</h5>
+              <p class="mb-4">{{program.short_description}}</p>
               <a href="programs.html" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Deep Dive</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="service-item rounded">
-          <div class="service-img rounded-top">
-            <img src="static/assets/images/program/second_program.jpg" class="img-fluid rounded-top w-100" alt="">
-          </div>
-          <div class="service-content rounded-bottom bg-light p-4">
-            <div class="service-content-inner">
-              <h5 class="mb-4">Complete Your Dreams</h5>
-              <p class="mb-4">
-                We connects rural students with training centers for skills and
-                job opportunities, empowering them and fostering community development.</p>
-              <a href="programs.html" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Deep Dive</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
-        <div class="service-item rounded">
-          <div class="service-img rounded-top">
-            <img src="static/assets/images/program/3rd_pro.png" class="img-fluid rounded-top w-100" alt="">
-          </div>
-          <div class="service-content rounded-bottom bg-light p-4">
-            <div class="service-content-inner">
-              <h5 class="mb-4">Awareness Campaigns</h5>
-              <p class="mb-4">
-                We organize regular programs in villages to educate and empower residents on
-                social issues, fostering informed decision-making and community activism.
-              </p>
-              <a href="programs.html" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Deep Dive</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
       <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
         <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="programs.html">Program
           Details</a>

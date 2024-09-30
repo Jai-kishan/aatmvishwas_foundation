@@ -11,7 +11,7 @@ from django.core.mail import send_mail, BadHeaderError
 def home(request):
     banners = Banner.objects.filter(active=True).order_by("date_modified")[:2]
     print(banners.count())
-    top_program = Program.objects.filter().order_by("-date_modified")[:2]
+    top_program = Program.objects.filter(active=True)
     context = {"banners": banners,"title":"Aatmvishwas Foundation | Home", "program_data":top_program}
     return render(request, "landing_page.html", context)
 
