@@ -19,3 +19,40 @@ Home Page
 About Us 
 - About us can be update using django admin pannel
 - data should be come from modles
+- mission
+
+Get Involved
+Be a Partner
+Donate
+Careers
+Volunteer
+
+About
+Our Story
+Team
+Blog
+
+Banner 
+- how can I fit the image height and width? while uploading image in django templates | so user upload any picture so thet can adjust autometically 
+
+
+
+
+Imp :- 
+- title should be change for all pages
+- Favicon icon on the tab
+- Create the Careers page -> coming soon page
+- Need to work on social media icon
+
+
+- create the blog page on medium
+    - share the weekly and monthly GBU
+
+- Make the small reels, posts on Insta / Facebook
+- create the blog page on Facebook
+- Tweet the archivements on Twitter
+
+
+
+
+

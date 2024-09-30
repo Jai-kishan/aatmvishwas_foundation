@@ -1,0 +1,454 @@
+{% extends 'base.html' %} {% block body %}
+<!-- Carousel Start -->
+<div class="header-carousel owl-carousel">
+  {% for slide in banners %}
+  <div class="header-carousel-item">
+    <img src="media/{{slide.image}}" class="img-fluid w-100" alt="Image">
+    <div class="carousel-caption">
+      <div class="carousel-caption-content p-3">
+        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">{{slide.tag}}</h5>
+        <h1 class="display-1 text-capitalize text-white mb-4">{{slide.title}}</h1>
+        <p class="mb-5 fs-5 animated slideInDown">{{slide.description}}</p>
+        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="donate.html">Donate Us</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<!-- Carousel End -->
+
+<!-- Navbar & Hero End -->
+
+<!-- Services Start -->
+<div class="container-fluid service py-3">
+  <div class="container py-5">
+    <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.2s">
+      <div class="sub-style">
+        <h4 class="sub-title px-3 mb-0">{{program_data.0.program_brief.tag_line}}</h4>
+      </div>
+      <h1 class="display-3 mb-4">{{program_data.0.program_brief}}</h1>
+      <p class="mb-0">{{program_data.0.program_brief.overview}}</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      {% for program in program_data %}
+      <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="service-item rounded">
+          <div class="service-img rounded-top">
+            <img src="media/{{program.image}}" class="img-fluid rounded-top w-100" alt="">
+          </div>
+          <div class="service-content rounded-bottom bg-light p-4">
+            <div class="service-content-inner">
+              <h5 class="mb-4">{{program.title}}</h5>
+              <p class="mb-4">{{program.short_description}}</p>
+              <a href="programs.html" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Deep Dive</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="programs.html">Program
+          Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Services End -->
+
+<!-- About Start -->
+<div class="container-fluid about bg-light py-3">
+  <div class="container py-5">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.2s">
+        <div class="about-img pb-5 ps-5">
+          <img src="static/assets/images/about.png" class="img-fluid rounded w-100" style="object-fit: cover;"
+            alt="Image">
+          <div class="about-img-inner">
+            <img src="static/assets/images/o-fav.png" class="img-fluid rounded-circle w-100 h-100" alt="Image">
+          </div>
+          <div class="about-experience">Educate to Empower</div>
+        </div>
+      </div>
+      <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.4s">
+        <div class="section-title text-start mb-5">
+          <h4 class="sub-title pe-3 mb-0">About Us</h4>
+          <h1 class="display-3 mb-4">We are Ready to Empower Futures Through Education.</h1>
+          <p class="mb-4">A group of education and social enthusiasts initiated a learning center in
+            Amagachi village, Bihar, addressing the region's educational and developmental gaps. Led by
+            Vijay Paswan, the center, established in October 2022 with limited resources, currently
+            supports 50-60 kids without formal school access. The team comprises volunteers juggling
+            full-time jobs to sustain both their families and this meaningful initiative!</p>
+          <h2>Our Aims are:-</h2>
+          <div class="row gy-2 gx-4 mb-4">
+            <div class="col-sm-6">
+              <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Bridging educational
+                gaps</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Ensuring Equality</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Provide diverse
+                learning opportunities
+              </p>
+            </div>
+            <div class="col-sm-6">
+              <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Alleviating Poverty
+              </p>
+            </div>
+            <div class="col-sm-6">
+              <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Empowering Rural
+                Communities </p>
+            </div>
+            <div class="col-sm-6">
+              <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Eradacting
+                Intoxication
+              </p>
+            </div>
+            <div class="col-sm-6">
+              <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Build skills and
+                confidence of youth
+              </p>
+            </div>
+            <div class="col-sm-6">
+              <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Economic Growth by
+                creating job opportunities
+              </p>
+            </div>
+          </div>
+          <a href="about.html" class="btn btn-primary rounded-pill text-white py-3 px-5">Discover More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- About End -->
+
+<!-- Testimonial Start -->
+<div class="container-fluid testimonial py-3 wow zoomInDown" data-wow-delay="0.1s">
+  <div class="container py-5">
+    <div class="section-title mb-5">
+      <div class="sub-style">
+        <h4 class="sub-title text-white px-3 mb-0">Testimonial</h4>
+      </div>
+      <h1 class="display-3 mb-4">What Alumina Say</h1>
+    </div>
+    <div class="testimonial-carousel owl-carousel">
+      <div class="testimonial-item">
+        <div class="testimonial-inner p-5">
+          <div class="testimonial-inner-img mb-4">
+            <img src="static/assets/images/testimonial-img.jpg" class="img-fluid rounded-circle" alt="">
+          </div>
+          <p class="text-white fs-7">Nisha was students cum Facilitator of Aatmvishwas Foundation! We
+            provide her opportunity to go to ngo to accquire skills that can make her job ready.
+            And now she is earning amount which is sufficent to feed herself as well as her family. She
+            has become insprision for my girls of her village.
+          </p>
+          <div class="text-center">
+            <h5 class="mb-2">Nisha</h5>
+            <p class="mb-2 text-white-50">Pune, India</p>
+            <div class="d-flex justify-content-center">
+              <i class="fas fa-star text-secondary"></i>
+              <i class="fas fa-star text-secondary"></i>
+              <i class="fas fa-star text-secondary"></i>
+              <i class="fas fa-star text-secondary"></i>
+              <i class="fas fa-star text-secondary"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-item">
+        <div class="testimonial-inner p-5">
+          <div class="testimonial-inner-img mb-4">
+            <img src="static/assets/images/testimonial-img.jpg" class="img-fluid rounded-circle" alt="">
+          </div>
+          <p class="text-white fs-7">Nisha was students cum Facilitator of Aatmvishwas Foundation! We
+            provide her opportunity to go to ngo to accquire skills that can make her job ready.
+            And now she is earning amount which is sufficent to feed herself as well as her family. She
+            has become insprision for my girls of her village.
+          </p>
+          <div class="text-center">
+            <h5 class="mb-2">Nisha</h5>
+            <p class="mb-2 text-white-50">Pune, India</p>
+            <div class="d-flex justify-content-center">
+              <i class="fas fa-star text-secondary"></i>
+              <i class="fas fa-star text-secondary"></i>
+              <i class="fas fa-star text-secondary"></i>
+              <i class="fas fa-star text-secondary"></i>
+              <i class="fas fa-star text-secondary"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Testimonial End -->
+
+<!-- Blog Start -->
+<div class="blogs container-fluid blog py-3">
+  <div class="container py-5">
+    <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="sub-style">
+        <h4 class="sub-title px-3 mb-0"> Explore Our Blog</h4>
+      </div>
+      <h1 class="display-3 mb-4">InspireED: Stories of Hope, Progress, and Education Equity</h1>
+      <p class="mb-0">Welcome to our insightful corner! Explore diverse topics, gain fresh perspectives, and
+        join the conversation on our blog. Engage with our community as we delve into thought-provoking
+        ideas, share valuable insights, and inspire positive change together.</p>
+    </div>
+    <div class="row g-4 justify-content-center blog-items">
+      <div class="blog-btn-border col-md-6-blog col-lg-6-blog col-xl-blog wow fadeInUp" data-wow-delay="0.3s">
+        <div class="blog-item rounded">
+          <div class="blog-img">
+            <img src="static/assets/images/blogs/center-1.png" class="img-fluid w-100" alt="Image">
+          </div>
+          <div class="pt-4 px-4 text-start">
+            <div class="d-flex justify-content-between mb-4">
+              <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> 10 Jan 2023
+              </p>
+            </div>
+            <h3>Imprioritize and maintain personal hygiene for a healthier, happier
+              life.</h3>
+            <p class="my-4">Today, we organized our first weekly class at the Aatmvishwas Foundation
+              Centre, marking the beginning of our new tradition of hosting unique activity
+              sessions...</p>
+          </div>
+        </div>
+        <div class="read-more-cont">
+          <img src="static/assets/images/blogs/center-1.png" class="img-fluid w-100" alt="Image">
+          <div class="pt-4 px-4 text-start">
+            <div class="d-flex justify-content-between mb-4">
+              <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> 16 Sept 2023
+              </p>
+            </div>
+            </a>
+            <p class="my-4">Today, we organized our first weekly class at the Aatmvishwas Foundation
+              Centre, marking the beginning of our new tradition of hosting unique activity sessions
+              with the children every Saturday. <br> During today's session, we focused on personal
+              hygiene
+              by checking the children's nails. Those with overgrown nails had them trimmed, and we
+              also conducted checks on their teeth and clothing. Moving forward, this activity will
+              take place every Saturday to instill a sense of cleanliness and neatness among the
+              children.</p>
+          </div>
+        </div>
+        <button class="btn btn-primary rounded-pill text-white py-2 px-4 mb-3" type="button">Read
+          More</button>
+      </div>
+      <div class="blog-btn-border col-md-6-blog col-lg-6-blog col-xl-blog wow fadeInUp" data-wow-delay="0.5s">
+        <div class="blog-item rounded">
+          <div class="blog-img">
+            <img src="static/assets/images/blogs/exercise-read-less.png" class="img-fluid w-100" alt="Image">
+          </div>
+          <div class="pt-4 px-4 text-start">
+            <div class="d-flex justify-content-between mb-4">
+              <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> 23 May 2024
+              </p>
+            </div>
+            <h3>Learning from Online Classes conducted by team members and
+              volunteers</h3>
+            <p class="my-4">Annu a team member conducted Google Meeting engaging children with
+              interactive activities and lively discussions. Using creative...</p>
+          </div>
+        </div>
+        <div class="read-more-cont">
+          <img src="static/assets/images/gallery/function-eve/fun-exercise.jpg" class="img-fluid w-100" alt="Image">
+          <div class="pt-4 px-4 text-start">
+            <div class="d-flex justify-content-between mb-4">
+              <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> 19 June 2024
+              </p>
+            </div>
+            <p class="my-4">Annu a team member conducted Google Meeting engaging children with
+              interactive activities and lively discussions. Using creative teaching methods, she
+              introduces action words like "run," "jump," and "dance." She encourages the children to
+              practice using these words in sentences, fostering their confidence and language skills.
+              She patiently guides childern, providing attention and support, ensuring that no one is
+              left behind, also gave take to preapre chart and hang on Aatmvishwas Center's wall.
+              Through education, she is breaking barriers and opening doors of opportunity for these
+              children. She knows that empowering them with language skills today will transform their
+              lives tomorrow. Annu knowing that she is making a meaningful difference, invites you as
+              well to give online classes to these kids.</p>
+          </div>
+        </div>
+        <button class="btn btn-primary rounded-pill text-white py-2 px-4 mb-3" type="button">Read
+          More</button>
+      </div>
+      <div class="blog-btn-border col-md-6-blog col-lg-6-blog col-xl-blog wow fadeInUp" data-wow-delay="0.3s">
+        <div class="blog-item rounded">
+          <div class="blog-img">
+            <img src="static/assets/images/blogs/community-4.png" class="img-fluid w-100" alt="Image">
+          </div>
+          <div class="pt-4 px-4 text-start">
+            <div class="d-flex justify-content-between mb-4">
+              <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> 16 May 2024
+              </p>
+            </div>
+            <h3>Learning Importance of mutual Growth</h3>
+            <p class="my-4">Two volunteers joined the 'Atmasvishwas Foundation' on January 9th for a
+              month-long stint, during which they made significant contributions and fostered mutual
+              learning and growth...</p>
+          </div>
+        </div>
+        <div class="read-more-cont">
+          <img src="static/assets/images/blogs/read-more-community-4.jpg" class="img-fluid w-100" alt="Image">
+          <div class="pt-4 px-4 text-start">
+            <div class="d-flex justify-content-between mb-4">
+              <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> 28 Sept 2023
+              </p>
+            </div>
+            <p class="my-4">Two volunteers joined the 'Atmasvishwas Foundation' on January 9th for a
+              month-long stint, during which they made significant contributions and fostered mutual
+              learning and growth. Both Ayush and Harsh diligently carried out their responsibilities
+              at the 'Atmasvishwas Foundation', excelling in their project work and establishing
+              strong bonds with the children and their families. To bid them farewell, they were
+              presented with a towel and a book by the foundation's representatives. On behalf of the
+              'Aatmvishwas Foundation', I had the pleasure of awarding them with a one-month work
+              experience certificate, acknowledging their dedication and commitment. Ayush and Harsh
+              expressed their intent to remain engaged with the Aatmvishwas Foundation in the future
+              and continue supporting its endeavors. The day concluded with heartfelt farewells,
+              capturing memories with the children through photographs, and sharing sweet treats.
+              Thank you for your valuable contributions.</p>
+          </div>
+        </div>
+        <button class="btn btn-primary rounded-pill text-white py-2 px-4 mb-3" type="button">Read
+          More</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Blog End -->
+
+<!-- read more popup box start -->
+<div class="popup-box">
+  <div class="popup-content">
+    <div class="popup-header">
+      <h3></h3>
+      <span class="popup-close-icon">&times;</span>
+    </div>
+    <div class="popup-body">
+
+    </div>
+    <div class="popup-footer">
+      <button class="btn popup-close-btn btn-primary rounded-pill text-white py-2 px-4">Close</button>
+    </div>
+  </div>
+</div>
+<!-- read more popup box end -->
+
+<!-- partner Start -->
+<div class="container-fluid py-3">
+  <div class="container">
+    <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="sub-style">
+        <h4 class="sub-title px-3 mb-0">Our NGO Partners</h4>
+      </div>
+      <h1 class="display-3 mb-4"></h1>
+      <p class="mb-0">Collaborate with us for a brighter future. Join hands with us to create a lasting impact
+        on
+        education and rural development. Together, we can transform communities, one initiative at a time.
+      </p>
+    </div>
+    <div class="owl-carousel owl-theme partner-carousel partner-carousel-1 mb-4 wow bounceInUp" data-wow-delay="0.1s">
+      <div class="partner-item rounded bg-light">
+        <div class="d-flex mb-3">
+          <img src="static/assets/images/partners/dbc.jpeg" class="img-fluid rounded-circle flex-shrink-0" alt="">
+          <div class="position-absolute" style="top: 15px; right: 20px;">
+            <i class="fa fa-quote-right fa-2x"></i>
+          </div>
+          <div class="ps-3 my-auto">
+            <h4 class="mb-0">Bihar Development Collective</h4>
+            <p class="m-0">Bihar</p>
+          </div>
+        </div>
+        <div class="partner-content">
+          <div class="d-flex">
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+          </div>
+          <p class="fs-5 m-0 pt-3">
+            The Bihar Development Collective is a coalition fostering collaboration and learning among
+            individuals and organizations to strengthen Bihar's development ecosystem.</p>
+        </div>
+      </div>
+      <div class="partner-item rounded bg-light">
+        <div class="d-flex mb-3">
+          <img src="static/assets/images/partners/pp.png" class="img-fluid rounded-circle flex-shrink-0" alt="">
+          <div class="position-absolute" style="top: 15px; right: 20px;">
+            <i class="fa fa-quote-right fa-2x"></i>
+          </div>
+          <div class="ps-3 my-auto">
+            <h4 class="mb-0">Project Potential</h4>
+            <p class="m-0">eArthshala, Galgalia, Kishanganj</p>
+          </div>
+        </div>
+        <div class="partner-content">
+          <div class="d-flex">
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+          </div>
+          <p class="fs-5 m-0 pt-3">
+            Project Potential believes in the potential of every youth and community. We empower through
+            self-exploration and community action, fostering self-reliance.</p>
+        </div>
+      </div>
+      <div class="partner-item rounded bg-light">
+        <div class="d-flex mb-3">
+          <img src="static/assets/images/partners/sajhesapne.jpeg" class="img-fluid rounded-circle flex-shrink-0"
+            alt="">
+          <div class="position-absolute" style="top: 15px; right: 20px;">
+            <i class="fa fa-quote-right fa-2x"></i>
+          </div>
+          <div class="ps-3 my-auto">
+            <h4 class="mb-0">Sajhe Sapne</h4>
+            <p class="m-0">Kandbari, Himachal Pradesh</p>
+          </div>
+        </div>
+        <div class="partner-content">
+          <div class="d-flex">
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+          </div>
+          <p class="fs-5 m-0 pt-3">Empowering marginalized young rural women to learn, earn, and excel in
+            the modern workforce, thus fostering their economic independence and empowerment.</p>
+        </div>
+      </div>
+      <div class="partner-item rounded bg-light">
+        <div class="d-flex mb-3">
+          <img src="static/assets/images/partners/Seemanchal.jpeg" class="img-fluid rounded-circle flex-shrink-0"
+            alt="">
+          <div class="position-absolute" style="top: 15px; right: 20px;">
+            <i class="fa fa-quote-right fa-2x"></i>
+          </div>
+          <div class="ps-3 my-auto">
+            <h4 class="mb-0">Seemanchal Library Foundation</h4>
+            <p class="m-0">Belwa hat, Kishanganj, Bihar</p>
+          </div>
+        </div>
+        <div class="partner-content">
+          <div class="d-flex">
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+            <i class="fas fa-star text-primary"></i>
+          </div>
+          <p class="fs-5 m-0 pt-3">Seemanchal Library Foundation empowers underprivileged children through
+            free education, access to books, community engagement, and holistic development.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partner End -->
+
+{% endblock %}

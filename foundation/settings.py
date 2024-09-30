@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'apps',
     'about_us',
     'donate_us',
+    'banner',
     
     'django_extensions',
     'crispy_forms',
@@ -128,9 +129,9 @@ DATABASES = {
     'default': {
         "ENGINE" : "django.db.backends.mysql",
         "NAME": "asf_db",
-        "USER": "root",
-        # "PASSWORD": "asf@2023",
-        "PASSWORD": "",
+        "USER": "asf",
+        "PASSWORD": "asf@2023",
+        # "PASSWORD": "",
         "HOST": "localhost",
         "PORT": "3306",    
         'OPTIONS': {
@@ -164,7 +165,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 

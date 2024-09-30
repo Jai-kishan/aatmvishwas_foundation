@@ -3,27 +3,35 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import ContactUsForm
-from .models import ContactUs, TeamMember
+from .models import *
+from banner.models import Banner
 from django.core.mail import send_mail, BadHeaderError
 
 
 def home(request):
-    return render(request, "index.html")
+    banners = Banner.objects.filter(active=True).order_by("date_modified")[:2]
+    print(banners.count())
+    top_program = Program.objects.filter(active=True)
+    context = {"banners": banners,"title":"Aatmvishwas Foundation | Home", "program_data":top_program}
+    return render(request, "landing_page.html", context)
 
+def landing_page_banner(request):
+    banners = Banner.objects.order_by("-date_modified")
+    context = {"banners": banners}
+    return    
 
 def team_member(request):
     team_member = TeamMember.objects.order_by("-date_modified")
-    context = {"team_member": team_member}
-    # return render(request, "polls/index.html", context)
+    context = {"team_member": team_member, "title":"Team Member"}
     return render(request, "team.html",context)
 
 
 def about_us(request):
-    return render(request, "about_us.html")
+    return render(request, "about_us.html", {"title":"About Us"})
 
 
 def contact_us(request):
-    return render(request, "contact_us.html")
+    return render(request, "contact_us.html", {"title":"Contact Us"})
 
 
 def contact(request):
@@ -62,12 +70,17 @@ def contact(request):
 
     else:
         form = ContactUsForm()
-    return render(request, "contact_us.html", {"form": form})
+    return render(request, "contact_us.html", {"form": form, "title":"Contact Us"})
 
 
 def blogs(request):
-    return render(request, "blog.html")
+    blog = Blog.objects.order_by("-date_published")
+    context = {"blogs": blog, "title":"Blog"}    
+    return render(request, "blog.html",context)
 
 
 def donate_us(request):
-    return render(request, "donate_us.html")
+    return render(request, "donate_us.html", {"title":"Donate Us"})
+
+def our_partners(request):
+    return render(request, 'partners.html', {"title":"Partners"})
