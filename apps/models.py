@@ -201,3 +201,27 @@ class Info(models.Model):
 
     def _str_(self):
         return self.title
+
+# Gallery model for uploading the photos
+
+from django.db import models
+
+# Define categories for the differnt types 
+CATEGORY_CHOICES = [
+    ('aatmvishwas center', 'Aatmvishwas Center'),
+    ('community', 'Community Engagement'),
+    ('student_life', 'Student Life'),
+    ('events', 'Events & Functions'),
+]
+
+class Photo(models.Model):
+    title = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='gallery_photos/') 
+    category = models.CharField(
+        max_length=20,
+        choices=CATEGORY_CHOICES,
+    )
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title

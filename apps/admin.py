@@ -10,4 +10,6 @@ admin.site.register(DonateUs)
 admin.site.register(ContactUs)
 admin.site.register(Program)
 admin.site.register(ProgramHeading)
+admin.site.register(Info)
+admin.site.register(Photo)
 

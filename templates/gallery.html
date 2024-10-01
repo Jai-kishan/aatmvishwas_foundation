@@ -1,69 +1,137 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<style>
+  .category-btn {
+    cursor: pointer; /* Change cursor to hand on hover */
+  }
 
+  .same-size-img {
+    height: 300px; /* Set a fixed height for uniformity */
+    width: 500px;; /* Cover the area while maintaining aspect ratio */
+  }
+</style>
 <body>
-  <!-- ************************* Page Title Starts Here ************************** -->
-
   <div class="page-nav no-margin row">
     <div class="container">
       <div class="row">
         <h2>Our Gallery</h2>
-        <!-- <ul> -->
-        <!-- <li> <a href="#"><i class="fas fa-home"></i> Home</a></li> -->
-        <!-- <li><i class="fas fa-angle-double-right"></i> Gallery</li> -->
-        <!-- </ul> -->
       </div>
     </div>
   </div>
 
-  <!-- ************************* Gallery Starts Here ************************** -->
-  <div id="portfolio" class="gallery">
+  <div class="container-fluid event py-5">
     <div class="container">
-      <div class="row">
-        <div class="gallery-filter d-none d-sm-block">
-          <button class="btn btn-default filter-button" data-filter="all">All</button>
-          <button class="btn btn-default filter-button" data-filter="hdpe">Finance</button>
-          <button class="btn btn-default filter-button" data-filter="sprinkle">Digital Marketing</button>
-          <button class="btn btn-default filter-button" data-filter="spray">Money</button>
-          <button class="btn btn-default filter-button" data-filter="irrigation">Business Alaysis</button>
-        </div>
-        <br />
-
-        <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter hdpe">
-          <img src="assets/images/events/image_01.jpg" class="img-responsive" />
-        </div>
-
-        <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter sprinkle">
-          <img src="assets/images/events/image_02.jpg" class="img-responsive" />
-        </div>
-
-        <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter hdpe">
-          <img src="assets/images/events/image_01.jpg" class="img-responsive" />
-        </div>
-
-        <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter irrigation">
-          <img src="assets/images/events/image_03.jpg" class="img-responsive" />
-        </div>
-
-        <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter spray">
-          <img src="assets/images/events/image_04.jpg" class="img-responsive" />
-        </div>
-
-        <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter spray">
-          <img src="assets/images/events/image_05.jpg" class="img-responsive" />
-        </div>
-
-        <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter irrigation">
-          <img src="assets/images/events/image_06.jpg" class="img-responsive" />
-        </div>
-
-        <div class="gallery_product col-lg-3 col-md-4 col-sm-3 col-xs-6 filter irrigation">
-          <img src="assets/images/events/image_07.jpg" class="img-responsive" />
+      <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+        <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Latest Events</small>
+        <h1 class="display-5 mb-5">Our Social & Professional Events Gallery</h1>
+      </div>
+      <div class="tab-class text-center">
+        <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 wow bounceInUp" data-wow-delay="0.1s">
+          <li class="nav-item p-2">
+            <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill category-btn active" data-category="all">
+              <span class="text-dark" style="width: 150px;">All Events</span>
+            </a>
+          </li>
+          <li class="nav-item p-2">
+            <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill category-btn" data-category="aatmvishwas center">
+              <span class="text-dark" style="width: 200px;">Aatmvishwas Center</span>
+            </a>
+          </li>
+          <li class="nav-item p-2">
+            <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill category-btn" data-category="community">
+              <span class="text-dark" style="width: 200px;">Community Engagement</span>
+            </a>
+          </li>
+          <li class="nav-item p-2">
+            <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill category-btn" data-category="student_life">
+              <span class="text-dark" style="width: 150px;">Student Life</span>
+            </a>
+          </li>
+          <li class="nav-item p-2">
+            <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill category-btn" data-category="events">
+              <span class="text-dark" style="width: 150px;">Event & Functions</span>
+            </a>
+          </li>
+        </ul>
+        
+        <!-- Gallery Photos -->
+        <div class="tab-content">
+          <div id="tab-1" class="tab-pane fade show p-0 active">
+            <div class="row g-4 photo-gallery">
+              {% for photo in photos %}
+              <div class="col-md-6 col-lg-3 wow bounceInUp photo-item" data-wow-delay="0.1s" data-category="{{ photo.category }}">
+                <div class="event-img position-relative">
+                  <img class="img-fluid rounded w-100 same-size-img"
+                       src="{{ photo.image.url }}" 
+                       alt="{{ photo.title }}"
+                       data-bs-toggle="modal" 
+                       data-bs-target="#photoModal" 
+                       onclick="openModal('{{ photo.image.url }}', '{{ photo.title }}')">
+                  <div class="event-overlay d-flex flex-column p-4">
+                    <h4 class="me-auto">{{ photo.title }}</h4>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Modal for displaying enlarged image -->
+  <div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="photoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="photoModalLabel">Image Title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="modal-image" src="#" class="img-fluid" alt="Modal Image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to open modal with image
+    function openModal(imageUrl, imageTitle) {
+      const modalImage = document.getElementById('modal-image');
+      const modalTitle = document.getElementById('photoModalLabel');
+
+      // Set the modal image and title
+      modalImage.src = imageUrl;
+      modalTitle.textContent = imageTitle;
+    }
+
+    // Filtering functionality for categories
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const photoItems = document.querySelectorAll('.photo-item');
+
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const selectedCategory = button.getAttribute('data-category');
+
+        // Remove 'active' class from all buttons
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+
+        // Add 'active' class to the clicked button
+        button.classList.add('active');
+
+        // Show or hide photo items based on the selected category
+        photoItems.forEach(item => {
+          const itemCategory = item.getAttribute('data-category');
+          if (selectedCategory === 'all' || itemCategory === selectedCategory) {
+            item.style.display = 'block'; // Show item
+          } else {
+            item.style.display = 'none'; // Hide item
+          }
+        });
+      });
+    });
+  </script>
 </body>
 {% endblock %}

@@ -14,14 +14,8 @@ def home(request):
     banners = Banner.objects.filter(active=True).order_by("date_modified")[:2]
     
     # Fetch top programs
-<<<<<<< HEAD
-    top_program = Program.objects.filter().order_by("-date_modified")[:2]
-    
-    
-=======
     top_program = Program.objects.filter(active=True)
 
->>>>>>> development
     partners = Partner.objects.all()  # Get all partners
 
     context = {
@@ -104,4 +98,12 @@ def donate_us(request):
 def our_partners(request):
    return render(request, 'partners.html', {"title":"Partners"})
 
+# view to get the images for the galary 
+
+def gallery_view(request):
+    photos = Photo.objects.all()
+    context = {
+        'photos': photos,
+    }
+    return render(request, 'gallery.html', context)
 

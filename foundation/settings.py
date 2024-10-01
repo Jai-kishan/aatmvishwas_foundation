@@ -129,15 +129,10 @@ DATABASES = {
     'default': {
         "ENGINE" : "django.db.backends.mysql",
         "NAME": "asf_db",
-<<<<<<< HEAD
         "USER": "root",
+        #"USER": "asf" ,
         "PASSWORD": "12345@pk",
         #"PASSWORD": "asf@2023",
-=======
-        "USER": "asf",
-        #"PASSWORD": "12345@pk",
-        "PASSWORD": "asf@2023",
->>>>>>> development
         "HOST": "localhost",
         "PORT": "3306",    
         'OPTIONS': {

@@ -10,5 +10,5 @@ urlpatterns = [
     path("blog", blogs, name="blogs"),
     path("donate_us", donate_us, name="donate_us"),
     path("partners", our_partners, name="our_partners"),
-
+    path("gallery",gallery_view,name="photo_gallery"),
 ]
