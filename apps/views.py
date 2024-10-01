@@ -15,7 +15,7 @@ def home(request):
     
     # Fetch top programs
     top_program = Program.objects.filter().order_by("-date_modified")[:2]
-
+    
     
     partners = Partner.objects.all()  # Get all partners
 

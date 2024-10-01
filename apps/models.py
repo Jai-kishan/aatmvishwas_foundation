@@ -130,6 +130,9 @@ class Program(models.Model):
     date_modified = models.DateTimeField(default=datetime.now, blank=True)
     date_modified_timestamp = models.CharField(max_length=50, blank=True)
 
+    # field to check the status 
+    #is_active = models.BooleanField(default=True, verbose_name="Active Status")
+
     def __str__(self):
         return self.title
 
@@ -192,6 +195,8 @@ class Info(models.Model):
     date_created_timestamp = models.CharField(max_length=50, blank=True)
     date_modified = models.DateTimeField(default=datetime.now, blank=True)
     date_modified_timestamp = models.CharField(max_length=50, blank=True)
+
+    is_active = models.BooleanField(default=True, verbose_name="Active Status")
 
     def _str_(self):
         return self.title
