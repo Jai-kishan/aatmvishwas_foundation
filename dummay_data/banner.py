@@ -12,6 +12,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "foundation.settings")
 import django
 
 django.setup()
+from banner.models import Banner
 from apps.models import *
 from django.core.files import File
 from django.utils import timezone

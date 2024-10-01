@@ -23,18 +23,18 @@ class Partner (models.Model):
         return self.name
 
 
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)  # Save to generate image file
-        if self.image:
-            image_path = self.image.path  # Get the image file path
-            img = Image.open(image_path)
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)  # Save to generate image file
+    #     if self.image:
+    #         image_path = self.image.path  # Get the image file path
+    #         img = Image.open(image_path)
 
-            # Set the target dimensions
-            target_size = (150, 150)  # Width, Height
-            radius = 150  # Radius for rounded corners
+    #         # Set the target dimensions
+    #         target_size = (150, 150)  # Width, Height
+    #         radius = 150  # Radius for rounded corners
 
-            # Use Image.Resampling.LANCZOS for high-quality resizing
-            img = img.resize((target_size[0], target_size[1]), Image.Resampling.LANCZOS)
+    #         # Use Image.Resampling.LANCZOS for high-quality resizing
+    #         img = img.resize((target_size[0], target_size[1]), Image.Resampling.LANCZOS)
 
-            # Save the resized image back to the same path
-            img.save(image_path)
+    #         # Save the resized image back to the same path
+    #         img.save(image_path)

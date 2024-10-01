@@ -14,12 +14,16 @@ def home(request):
     banners = Banner.objects.filter(active=True).order_by("date_modified")[:2]
     
     # Fetch top programs
+<<<<<<< HEAD
     top_program = Program.objects.filter().order_by("-date_modified")[:2]
     
     
+=======
+    top_program = Program.objects.filter(active=True)
+
+>>>>>>> development
     partners = Partner.objects.all()  # Get all partners
 
-   
     context = {
         "banners": banners,
         "title": "Aatmvishwas Foundation | Home",
